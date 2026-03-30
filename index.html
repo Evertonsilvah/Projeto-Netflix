@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        
+            <div id="logo">
+            <img id="logo-principal" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+            </div>
+
+        <h1>Quem está assistindo?</h1>
+        <section aria-label="Perfis disponíveis">
+                <nav class="profiles">
+                    <ul>
+                                <li>
+                                    <a href="catalogo/catalogo.html" class="profile">
+                                        <figure>
+                                            <img src="assets/perfil1.jpg" alt="Profile 1">
+                                            <figcaption>Everton</figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="catalogo/catalogo.html" class="profile">
+                                        <figure>
+                                            <img src="assets/perfil2.jpg" alt="Profile 2">
+                                            <figcaption>Deivid</figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="catalogo/catalogo.html" class="profile">
+                                        <figure>
+                                            <img src="assets/perfil3.jpg" alt="Profile 3">
+                                            <figcaption>Jessica</figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="catalogo/catalogo.html" class="profile">
+                                        <figure>
+                                            <img src="assets/perfil4.jpg" alt="Profile 4">
+                                            <figcaption>Isis</figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                    </ul>
+                </nav>
+        </section>
+    </main>
+    <!-- Testando daqui pra baixo -->
+    <script>
+    document.querySelectorAll('.profile').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const imgSrc = this.querySelector('img').getAttribute('src');
+            const nome = this.querySelector('figcaption').textContent;
+            
+            localStorage.setItem('perfilSelecionado', JSON.stringify({
+                nome: nome,
+                imagem: imgSrc
+            }));
+        });
+    });
+    </script>
+</body>
+</html>
