@@ -53,19 +53,6 @@
                 </nav>
         </section>
     </main>
-    <!-- Testando daqui pra baixo -->
-    <script>
-    document.querySelectorAll('.profile').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const imgSrc = this.querySelector('img').getAttribute('src');
-            const nome = this.querySelector('figcaption').textContent;
-            
-            localStorage.setItem('perfilSelecionado', JSON.stringify({
-                nome: nome,
-                imagem: imgSrc
-            }));
-        });
-    });
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
